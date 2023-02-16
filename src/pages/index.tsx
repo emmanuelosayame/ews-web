@@ -14,7 +14,7 @@ export default function Home() {
       </Head> */}
       <div>
         <Header />
-        <p className='text-3xl font-bold underline'>yikes</p>
+        <p className='text-3xl font-medium underline'>yikes</p>
       </div>
       <Footer />
     </>

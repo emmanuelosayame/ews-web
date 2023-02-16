@@ -17,7 +17,13 @@ const CheckIn = () => {
       setEwsc(data());
     })();
   }, []);
-  return <></>;
+  return (
+    <>
+      <div>
+        <button>Checkin</button>
+      </div>
+    </>
+  );
 };
 
 export default CheckIn;
