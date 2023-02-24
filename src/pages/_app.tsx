@@ -2,30 +2,35 @@ import "src/styles/globals.css";
 import type { AppProps } from "next/app";
 import font from "@next/font/local";
 
-const migra = font({
+const poppins = font({
   src: [
     {
-      path: "../../public/fonts/Migra Extralight 200.otf",
+      path: "../../public/fonts/Poppins-Regular.ttf",
       style: "normal",
-      weight: "200",
+      weight: "400",
     },
     {
-      path: "../../public/fonts/Migra Extrabold 800.otf",
+      path: "../../public/fonts/Poppins-Medium.ttf",
       style: "normal",
-      weight: "800",
+      weight: "500",
     },
     {
-      path: "../../public/fonts/Migra Italic Extralight Italic 200.otf",
+      path: "../../public/fonts/Poppins-SemiBold.ttf",
+      style: "normal",
+      weight: "600",
+    },
+    {
+      path: "../../public/fonts/Poppins-LightItalic.ttf",
       style: "italic",
       weight: "200",
     },
     {
-      path: "../../public/fonts/Migra Italic Extrabold Italic 800.otf",
+      path: "../../public/fonts/Poppins-Bold.ttf",
       style: "normal",
       weight: "800",
     },
   ],
-  variable: "--font-migra",
+  variable: "--font-poppins",
 });
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -34,11 +39,11 @@ export default function App({ Component, pageProps }: AppProps) {
       <style jsx global>
         {`
           html {
-            font-family: ${migra.style.fontFamily};
+            font-family: ${poppins.style.fontFamily};
           }
         `}
       </style>
-      <main className={` ${migra.variable} bg-stone-200 h-screen`}>
+      <main className={` ${poppins.variable} h-screen w-screen`}>
         <Component {...pageProps} />
       </main>
     </>
