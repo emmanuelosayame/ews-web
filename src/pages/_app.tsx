@@ -43,7 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
-      <main className={` ${poppins.variable} h-screen w-screen`}>
+      <main className={` ${poppins.variable} h-full w-full`}>
         <Component {...pageProps} />
       </main>
     </>

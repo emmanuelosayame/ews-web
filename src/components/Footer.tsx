@@ -3,7 +3,9 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className='bg-neutral-400 flex justify-between items-center p-20'>
+    <div
+      className='bg-neutral-400 w-full flex flex-col md:flex-row
+     justify-between items-center py-20 px-5 md:p-20 gap-10 md:gap-0'>
       <div className='w-80 text-white'>
         <Image
           alt='logo-full'
@@ -49,8 +51,10 @@ const Footer = () => {
           </a>
         </div>
 
-        <p className='text-[11px]'>Join our productivity community</p>
-        <div className='relative bg-white h-8 p-1 rounded-lg overflow-hidden'>
+        <p className='text-sm md:text-[11px] mt-5 md:mt-0'>
+          Join our productivity community
+        </p>
+        <div className='relative flex bg-white h-10 md:h-8 p-1 rounded-lg overflow-hidden'>
           <input
             className='w-2/3 h-full p-1 outline-none'
             placeholder='Enter email address'

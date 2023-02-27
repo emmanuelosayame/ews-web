@@ -1,30 +1,37 @@
 import Image from "next/image";
 import { Bars3Icon, HeartIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
+import useMediaQuery from "@lib/Hooks/useMediaQuery";
+import Avatar from "public/Avatar.svg";
 
-const Header = () => {
+const Header = ({ initialTrans }: { initialTrans: boolean }) => {
+  // const mq = useMediaQuery();
   return (
     <div
-      className='flex items-center fixed inset-x-0 top-0 z-50
-     text-white px-14 py-2 gap-2 text-xl'>
+      className={`flex items-center fixed inset-x-0 top-0 z-50
+     text-white px-2 md:px-14 py-2 gap-3 text-xl ${
+       !initialTrans ? "bg-blue-200" : ""
+     }`}>
       <div className='flex items-center gap-2 flex-1'>
-        <Image alt='logo' src='/EWSLogo.png' width={50} height={50} />
+        <Image alt='logo' src='/EWSLogo.png' width={48} height={48} />
         <div className='text-white '>
-          <h3 className='text-2xl font-semibold '>ETERNAL</h3>
-          <p className='text-base leading-3'>WORKSPACE</p>
+          <h3 className='text-xl md:text-2xl font-semibold '>ETERNAL</h3>
+          <p className='text-[15px] md:text-[16px] leading-4'>WORKSPACE</p>
         </div>
       </div>
 
-      <Link href=''>List your space</Link>
+      <Link href='' className='hidden md:block text-cwhite'>
+        List your space
+      </Link>
 
-      <div className='flex items-center gap-1'>
-        <HeartIcon width={30} />
-        <p>Wish lists</p>
+      <div className='flex items-center gap-1 text-cwhite'>
+        <HeartIcon width={30} color='white' />
+        <p className='hidden md:block'>Wish lists</p>
       </div>
 
-      <div className='flex items-center px-2 py-1 gap-2 rounded-3xl ring-2 ring-white'>
-        <Bars3Icon width={20} />
-        <Image alt='avatar' src='Avatar.svg' width={35} height={35} />
+      <div className='flex items-center px-2 py-1 gap-2 rounded-3xl border-2 border-cwhite'>
+        <Bars3Icon width={20} className='text-cwhite' />
+        <Avatar />
       </div>
     </div>
   );
