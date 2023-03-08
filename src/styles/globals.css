@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.btn-green-n {
+  background: linear-gradient(103.42deg, #339090 3.53%, #0d7f8c 70.21%);
+}
+
 .btn-green-g {
   background: linear-gradient(
     103.42deg,
@@ -9,4 +13,8 @@
     #0d7f8c 25.21%,
     #00272b 94%
   );
+}
+
+.bg-footer {
+  background: rgba(0, 39, 43, 0.6);
 }

@@ -1,5 +1,5 @@
 import Layout from "@components/Layout";
-import { StarIcon } from "@heroicons/react/24/solid";
+import { ChevronDownIcon, StarIcon } from "@heroicons/react/24/solid";
 import { workspaces } from "@lib/data";
 import useMediaQuery from "@lib/Hooks/useMediaQuery";
 import Head from "next/head";
@@ -46,29 +46,32 @@ export default function Home() {
       </div>
       {/* div  */}
       <div className='w-full px-2 mt-5'>
-        <div className='w-11/12 md:w-11/12 mx-auto'>
-          <div className='md:flex bg-clightblue rounded-lg p-5'>
-            <div className='w-full md:w-1/2 flex flex-col justify-center font-montserrat py-2 px-5'>
-              <h3 className='text-2xl md:text-3xl text-center p-2 font-semibold '>
+        <div className='md:w-11/12 mx-1 md:mx-auto'>
+          <div className='md:flex bg-clightblue rounded-lg p-3 md:p-5'>
+            <div className='w-full md:w-1/2 flex flex-col justify-center font-montserrat py-2 md:px-5'>
+              <h3 className='text-lg md:text-3xl text-center p-2 font-semibold '>
                 Join our productivity community
               </h3>
-              <p>
+              <p className='text-base md:text-lg'>
                 Receive exclusive offers, inspirational stories and travel
                 regulation updates.
               </p>
             </div>
 
-            <div className='w-full md:w-1/2 py-2 px-10'>
-              <div className='relative flex bg-white h-12 md:h-14 p-1 rounded-xl overflow-hidden'>
+            <div className='w-full md:w-1/2 py-2 px-2 md:px-10'>
+              <div className='relative md:bg-white md:rounded-xl md:flex md:p-1'>
                 <input
-                  className='flex-1 h-full p-1 outline-none text-lg'
+                  className='h-[48px] pl-3 pr-3 md:pr-36 outline-none text-lg bg-white
+                   rounded-xl overflow-hidden w-full'
                   placeholder='Enter email address'
                 />
-                <button className='btn-green-g text-white rounded-xl text-sm h-full px-3'>
+                <button
+                  className='md:absolute md:right-1 h-[48px] w-full md:w-fit
+                 btn-green-g text-white rounded-xl text-sm px-3 mt-5 md:mt-0'>
                   {mq ? "Request to join" : "Join"}
                 </button>
               </div>
-              <p className='text-sm md:text-[15px] mt-3'>
+              <p className='text-[12px] md:text-[15px] mt-3'>
                 By signing up, you agree to our Terms of Service and Privacy
                 Policy. Due to its exclusivity, you can only be invited. You
                 will receive offers from EWS as soon as you’re invited to join
@@ -79,43 +82,45 @@ export default function Home() {
             </div>
           </div>
           {/* div  */}
-          <div className='p-2 mt-12 md:mt-2'>
-            <h3 className='text-xl text-center md:text-start font-bold mb-10'>
+          <div
+            className='p-2 mt-12 md:mt-2 shadow-2xl border border-neutral-200 md:border-0 md:shadow-none
+           rounded-xl w-11/12 mx-auto'>
+            <h3 className='text-lg md:text-xl text-center md:text-start font-bold my-10 md:mb-10'>
               Find the best workspace rentals near you
             </h3>
-            <div className='flex justify-between gap-5'>
+            <div className='md:flex justify-between space-y-7 md:gap-5 p-4'>
               <Temp1
                 heading='Explore spaces that suit you'
                 body='Browse through catalogue of workspaces with convenience and amenities
         that suit your style'>
-                <HomeIcon2 />
+                <HomeIcon2 className='' />
               </Temp1>
               <Temp1
                 heading='Explore spaces that suit you'
                 body='Browse through catalogue of workspaces with convenience and amenities
         that suit your style'>
-                <PeopleComn />
+                <PeopleComn width={56} />
               </Temp1>
               <Temp1
                 heading='Explore spaces that suit you'
                 body='Browse through catalogue of workspaces with convenience and amenities
         that suit your style'>
-                <HomeIcon1 />
+                <HomeIcon1 width={56} />
               </Temp1>
             </div>
           </div>
 
           {/* div  */}
 
-          <div className='w-full mt-12 md:mt-2'>
-            <h3 className='text-xl text-center md:text-start font-bold mb-8'>
+          <div className='w-full mt-12 md:mt-2 border-t-2'>
+            <h3 className='text-base md:text-xl text-start font-medium md:font-bold my-4 md:mb-8'>
               Explore workspaces near you
             </h3>
             <div className='overflow-x-auto'>
               <div className='w-fit flex gap-3 mx-auto'>
                 {workspaces.map((workspace) => (
                   <div key={workspace.id} className=''>
-                    <div className='w-48 md:w-64 text-sm p-1'>
+                    <div className='w-64 text-sm p-1'>
                       <Image
                         alt='workspace'
                         src={workspace.image}
@@ -157,22 +162,28 @@ export default function Home() {
 
       {/* full */}
       <div className='bg-lpbg2 h-72 flex flex-col items-center justify-center gap-4 text-white'>
-        <h3 className=' w-4/5 md:w-1/2 text-xl md:text-2xl text-center'>
+        <h3 className='w-4/5 md:w-1/2 text-base md:text-2xl text-center'>
           Would you like to list your space on EWS for partnership and rental
           income?
         </h3>
-        <button className='bg-green-700 rounded-lg text-sm py-1 px-3'>
+        <button className='btn-green-n rounded-lg text-sm py-1 px-3'>
           List your space
         </button>
       </div>
 
       {/* full */}
       <div className='pt-10 pb-5'>
-        <div className='w-10/12 mx-auto'>
-          <h3 className='font-semibold text-xl my-3 text-center md:text-start'>
-            What EWS is all about
+        <div className='w-10/12 mx-auto relative'>
+          <h3
+            className='font-semibold border-b border-b-neutral-200 md:border-0 
+          text-base md:text-xl my-3 text-start'>
+            What EWS is all about?
           </h3>
-          <p>
+          <ChevronDownIcon
+            width={30}
+            className='absolute top-0 right-1 md:hidden'
+          />
+          <p className='text-sm md:text-base'>
             At EWS, our utmost goal is to connect remote workers with workspaces
             with the look and feel of any work environment. The EWS community
             offers remote workers an array of rental spaces in different types
@@ -185,11 +196,13 @@ export default function Home() {
             the efficiency and comfort with numerous amenities just for you and
             all within your budget.
           </p>
-          <div className='w-full border-b border-b-neutral-200 my-4' />
-          <h3 className='font-semibold text-xl text-center md:text-start'>
-            What makes our workspaces perfect for you
+          <div className='w-full border-b border-b-neutral-200 my-4 hidden md:block' />
+          <h3
+            className='font-semibold border-b border-b-neutral-200 md:border-0 
+          text-[15px] md:text-xl my-3 text-start'>
+            What makes our workspaces perfect for you?
           </h3>
-          <p>
+          <p className='text-sm md:text-base'>
             EWS workspaces provides you an array of features that makes you feel
             comfortable and confidence, we help create more opportunities for
             creative collaboration by providing you with a co-working community
@@ -215,10 +228,12 @@ const Temp1 = ({
   children?: ReactNode;
 }) => {
   return (
-    <div className=''>
-      {children}
-      <h3>{heading}</h3>
-      <p className='text-[15px]'>{body}</p>
+    <div className='flex gap-2 md:flex-col justify-end'>
+      <div className='w-44'>{children}</div>
+      <div className=''>
+        <h3 className='font-semibold md:text-base md:font-medium'>{heading}</h3>
+        <p className='text-sm md:text-[15px]'>{body}</p>
+      </div>
     </div>
   );
 };
