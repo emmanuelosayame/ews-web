@@ -33,6 +33,20 @@ const poppins = font({
   variable: "--font-poppins",
 });
 
+const montserrat = font({
+  src: [
+    {
+      path: "../../public/fonts/Montserrat-VariableFont_wght.ttf",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Montserrat-Italic-VariableFont_wght.ttf",
+      style: "italic",
+    },
+  ],
+  variable: "--font-montserrat",
+});
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -43,7 +57,8 @@ export default function App({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
-      <main className={` ${poppins.variable} h-full w-full`}>
+      <main
+        className={` ${poppins.variable} ${montserrat.variable} h-full w-full bg-cwhite`}>
         <Component {...pageProps} />
       </main>
     </>

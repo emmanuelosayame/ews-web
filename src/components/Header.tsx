@@ -10,14 +10,16 @@ const Header = ({ initialTrans }: { initialTrans: boolean }) => {
     <div
       className={`flex items-center fixed inset-x-0 top-0 z-50
      text-white px-2 md:px-14 py-2 gap-3 text-xl ${
-       !initialTrans ? "bg-blue-200" : ""
+       !initialTrans ? "bg-clightblue" : ""
      }`}>
       <div className='flex items-center gap-2 flex-1'>
-        <Image alt='logo' src='/EWSLogo.png' width={48} height={48} />
-        <div className='text-white '>
-          <h3 className='text-xl md:text-2xl font-semibold '>ETERNAL</h3>
-          <p className='text-[15px] md:text-[16px] leading-4'>WORKSPACE</p>
-        </div>
+        <Image
+          alt='logo'
+          src='/logo.png'
+          width={170}
+          height={48}
+          className=''
+        />
       </div>
 
       <Link href='' className='hidden md:block text-cwhite'>

@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       poppins: ["var(--font-poppins)"],
+      montserrat: ["var(--font-montserrat)"],
     },
     extend: {
       backgroundImage: {
@@ -13,6 +14,8 @@ module.exports = {
       },
       colors: {
         cgray: "#E7E2E2",
+        cwhite: "#F6F3EF",
+        clightblue: "#C0DCDF",
         cwhite: "#F6F3EF",
       },
     },

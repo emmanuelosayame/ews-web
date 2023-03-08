@@ -6,6 +6,9 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode, useEffect, useState } from "react";
+import HomeIcon1 from "public/home heart.svg";
+import PeopleComn from "public/PeopleCommunity.svg";
+import HomeIcon2 from "public/HomeVector.svg";
 
 export default function Home() {
   const mq = useMediaQuery("(min-width: 800px)");
@@ -37,16 +40,16 @@ export default function Home() {
       <div
         className='bg-lpbg w-full h-[600px] flex justify-center items-center
        text-white z-10 px-10'>
-        <p className='text-2xl md:text-5xl text-center font-medium'>
+        <p className='text-2xl md:text-5xl text-center font-bold font-montserrat'>
           Connect to workspaces near you
         </p>
       </div>
       {/* div  */}
-      <div className='w-full bg-white p-2'>
-        <div className='w-11/12 md:w-10/12 mx-auto'>
-          <div className='md:flex bg-blue-200 rounded-lg p-5'>
-            <div className='w-full md:w-1/2 flex flex-col justify-center'>
-              <h3 className='text-2xl md:text-3xl text-center p-2 font-medium'>
+      <div className='w-full px-2 mt-5'>
+        <div className='w-11/12 md:w-11/12 mx-auto'>
+          <div className='md:flex bg-clightblue rounded-lg p-5'>
+            <div className='w-full md:w-1/2 flex flex-col justify-center font-montserrat py-2 px-5'>
+              <h3 className='text-2xl md:text-3xl text-center p-2 font-semibold '>
                 Join our productivity community
               </h3>
               <p>
@@ -55,13 +58,13 @@ export default function Home() {
               </p>
             </div>
 
-            <div className='w-full md:w-1/2'>
+            <div className='w-full md:w-1/2 py-2 px-10'>
               <div className='relative flex bg-white h-12 md:h-14 p-1 rounded-xl overflow-hidden'>
                 <input
-                  className='w-2/3 h-full p-1 outline-none'
+                  className='flex-1 h-full p-1 outline-none text-lg'
                   placeholder='Enter email address'
                 />
-                <button className='bg-green-800 text-white rounded-lg text-sm h-full w-1/3'>
+                <button className='btn-green-g text-white rounded-xl text-sm h-full px-3'>
                   {mq ? "Request to join" : "Join"}
                 </button>
               </div>
@@ -84,18 +87,21 @@ export default function Home() {
               <Temp1
                 heading='Explore spaces that suit you'
                 body='Browse through catalogue of workspaces with convenience and amenities
-        that suit your style'
-              />
+        that suit your style'>
+                <HomeIcon2 />
+              </Temp1>
               <Temp1
                 heading='Explore spaces that suit you'
                 body='Browse through catalogue of workspaces with convenience and amenities
-        that suit your style'
-              />
+        that suit your style'>
+                <PeopleComn />
+              </Temp1>
               <Temp1
                 heading='Explore spaces that suit you'
                 body='Browse through catalogue of workspaces with convenience and amenities
-        that suit your style'
-              />
+        that suit your style'>
+                <HomeIcon1 />
+              </Temp1>
             </div>
           </div>
 
