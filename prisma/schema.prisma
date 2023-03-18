@@ -1,0 +1,74 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+enum SubType {
+  milkshake
+  mag
+}
+
+enum Status {
+  active
+  inActive
+}
+
+type Date {
+  start DateTime
+  end   DateTime
+}
+
+type Subcription {
+  type   SubType
+  status Status
+  date   Date
+}
+
+model Customer {
+  id           String      @id @default(auto()) @map("_id") @db.ObjectId
+  firstName    String
+  lastName     String
+  email        String
+  phoneNo      String
+  // address {}
+  subscription Subcription
+}
+
+type OpTime {
+  open  DateTime
+  close DateTime
+}
+
+enum SpaceStatus {
+  free
+  occupied
+  inActive
+}
+
+type Space {
+  id         String
+  status     SpaceStatus
+  occupantId String
+}
+
+type CenterLocation {
+  state String
+  area  String
+}
+
+model Center {
+  id       String         @id @default(auto()) @map("_id") @db.ObjectId
+  name     String
+  opTime   OpTime
+  email    String
+  phoneNo  String
+  location CenterLocation
+  spaces   Space[]
+}
