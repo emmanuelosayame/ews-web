@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import crypto from "crypto";
-import { PaymentEvent } from "types/payment";
+import { PaymentEvent } from "t/payment";
 const secret = process.env.PAYSTACK_SECRET_KEY || "";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {

@@ -17,6 +17,7 @@ module.exports = {
         cwhite: "#F6F3EF",
         clightblue: "#C0DCDF",
         cwhite: "#F6F3EF",
+        ews: "#0D7F8C",
       },
     },
   },

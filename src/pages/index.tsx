@@ -6,9 +6,11 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode, useEffect, useState } from "react";
-import HomeIcon1 from "public/home heart.svg";
+import BoostSvg from "public/boost.svg";
 import PeopleComn from "public/PeopleCommunity.svg";
 import HomeIcon2 from "public/HomeVector.svg";
+import vectorImg from "public/VectorImage.png";
+import image1 from "public/Frame419.png";
 
 export default function Home() {
   const mq = useMediaQuery("(min-width: 800px)");
@@ -41,120 +43,150 @@ export default function Home() {
         className='bg-lpbg w-full h-[600px] flex justify-center items-center
        text-white z-10 px-10'>
         <p className='text-2xl md:text-5xl text-center font-bold font-montserrat'>
-          Connect to workspaces near you
+          Work in a workspace near you
         </p>
       </div>
       {/* div  */}
       <div className='w-full px-2 mt-5'>
-        <div className='md:w-11/12 mx-1 md:mx-auto'>
-          <div className='md:flex bg-clightblue rounded-lg p-3 md:p-5'>
-            <div className='w-full md:w-1/2 flex flex-col justify-center font-montserrat py-2 md:px-5'>
-              <h3 className='text-lg md:text-3xl text-center p-2 font-semibold '>
-                Join our productivity community
-              </h3>
-              <p className='text-base md:text-lg'>
-                Receive exclusive offers, inspirational stories and travel
-                regulation updates.
-              </p>
-            </div>
-
-            <div className='w-full md:w-1/2 py-2 px-2 md:px-10'>
-              <div className='relative md:bg-white md:rounded-xl md:flex md:p-1'>
-                <input
-                  className='h-[48px] pl-3 pr-3 md:pr-36 outline-none text-lg bg-white
-                   rounded-xl overflow-hidden w-full'
-                  placeholder='Enter email address'
-                />
-                <button
-                  className='md:absolute md:right-1 h-[48px] w-full md:w-fit
-                 btn-green-g text-white rounded-xl text-sm px-3 mt-5 md:mt-0'>
-                  {mq ? "Request to join" : "Join"}
-                </button>
-              </div>
-              <p className='text-[12px] md:text-[15px] mt-3'>
-                By signing up, you agree to our Terms of Service and Privacy
-                Policy. Due to its exclusivity, you can only be invited. You
-                will receive offers from EWS as soon as you’re invited to join
-                and agree that we may share your hashed email address with third
-                parties for the purpose of better tailoring advertising to your
-                needs.
-              </p>
-            </div>
-          </div>
-          {/* div  */}
-          <div
-            className='p-2 mt-12 md:mt-2 shadow-2xl border border-neutral-200 md:border-0 md:shadow-none
+        {/* div  */}
+        <div
+          className='p-2 mt-12 md:mt-2 shadow-2xl border border-neutral-200 md:border-0 md:shadow-none
            rounded-xl w-11/12 mx-auto'>
-            <h3 className='text-lg md:text-xl text-center md:text-start font-bold my-10 md:mb-10'>
-              Find the best workspace rentals near you
-            </h3>
-            <div className='md:flex justify-between space-y-7 md:gap-5 p-4'>
-              <Temp1
-                heading='Explore spaces that suit you'
-                body='Browse through catalogue of workspaces with convenience and amenities
-        that suit your style'>
-                <HomeIcon2 className='' />
-              </Temp1>
-              <Temp1
-                heading='Explore spaces that suit you'
-                body='Browse through catalogue of workspaces with convenience and amenities
-        that suit your style'>
-                <PeopleComn width={56} />
-              </Temp1>
-              <Temp1
-                heading='Explore spaces that suit you'
-                body='Browse through catalogue of workspaces with convenience and amenities
-        that suit your style'>
-                <HomeIcon1 width={56} />
-              </Temp1>
+          <h3 className='text-lg md:text-xl text-center md:text-start font-bold mt-5'>
+            Find the best workspace rentals near you
+          </h3>
+          <div className='md:flex justify-between space-y-7 md:gap-5 px-4 pb-4'>
+            <Temp1
+              heading='Explore spaces that suit you'
+              body='Browse through catalogue of workspaces with convenience and amenities that suit your style '>
+              <HomeIcon2 className='' />
+            </Temp1>
+            <Temp1
+              heading='Connect with people'
+              body='Just like a normal work environment, connect and interact with people in the same field as you.'>
+              <PeopleComn width={56} />
+            </Temp1>
+            <Temp1
+              heading='Boost Productivity'
+              body="EWS has productivity at its core. Here, you save money and time, doing your best work, and being satisfied after a day's work.">
+              <BoostSvg width={56} />
+            </Temp1>
+          </div>
+        </div>
+
+        {/* div  */}
+        <div className='w-full bg-[#E6E7ED] p-2'>
+          <h2 className='text-lg font-medium text-center '>
+            How does <span className='text-[#0B707B]'>EWS</span> works
+          </h2>
+          <p className='text-center text-sm leading-3'>Simple and fast!</p>
+
+          <div className='w-fit gap-24 flex mx-auto p-7'>
+            <div className='w-fit'>
+              <div className=' border-2 border-ews relative w-56 h-48 rounded-xl p-1'>
+                <div className='w-full h-full bg-ews rounded-lg'></div>
+                <Image
+                  alt='frame'
+                  src={image1}
+                  className='w-full absolute -bottom-4 -right-4'
+                />
+              </div>
+              <div className='h-1 flex gap-5 mt-10 px-4'>
+                <div className='w-1/3 bg-ews rounded-full' />
+                <div className='w-1/3 bg-neutral-300 rounded-full' />
+                <div className='w-1/3 bg-neutral-300 rounded-full' />
+              </div>
+            </div>
+
+            <div className=' rounded-r-2xl rounded-l-md overflow-hidden w-[350px]'>
+              <Temp2
+                active
+                no={1}
+                heading='Book a space'
+                body='Browse through our catalogue of workspaces near you or walk into any workspaces with our logo displayed.'
+                onClick={() => {}}
+              />
+              <Temp2
+                active={false}
+                no={2}
+                heading='Subscribe to a plan'
+                body='Subscribe to any of our plans to be able to log into your dashboard and check in at an convenient time.'
+                onClick={() => {}}
+              />
+              <Temp2
+                active={false}
+                no={3}
+                heading='Check in'
+                body='Check in either online or scan the QR code at the workspace with your phone camera and be more productive!'
+                onClick={() => {}}
+              />
             </div>
           </div>
+        </div>
 
-          {/* div  */}
-
-          <div className='w-full mt-12 md:mt-2 border-t-2'>
-            <h3 className='text-base md:text-xl text-start font-medium md:font-bold my-4 md:mb-8'>
-              Explore workspaces near you
-            </h3>
-            <div className='overflow-x-auto'>
-              <div className='w-fit flex gap-3 mx-auto'>
-                {workspaces.map((workspace) => (
-                  <div key={workspace.id} className=''>
-                    <div className='w-64 text-sm p-1'>
-                      <Image
-                        alt='workspace'
-                        src={workspace.image}
-                        width={100}
-                        height={100}
-                        className='rounded-lg w-full'
-                      />
-                      <div className='flex items-center justify-between py-2'>
-                        <h3 className='font-semibold'>{workspace.name}</h3>
-                        <p className='rounded-md py-1 px-2 bg-neutral-300 text-white'>
-                          {workspace.sub}
-                        </p>
-                        <p className='inline-flex items-center gap-1'>
-                          <span>
-                            <StarIcon width={18} />
-                          </span>
-                          {workspace.rating}
-                        </p>
-                      </div>
-                      <p className='text-[13px] leading-3'>
-                        {workspace.occupant} occupant
+        <div className='md:w-11/12 md:mx-auto mt-12 md:mt-2'>
+          <h3 className='text-base md:text-xl text-start font-medium md:font-bold my-4 md:mb-8'>
+            Explore workspaces near you
+          </h3>
+          <div className='overflow-x-auto'>
+            <div className='w-fit flex gap-3 mx-auto'>
+              {workspaces.map((workspace) => (
+                <div key={workspace.id} className=''>
+                  <div className='w-64 text-sm p-1'>
+                    <Image
+                      alt='workspace'
+                      src={workspace.image}
+                      width={100}
+                      height={100}
+                      className='rounded-lg w-full'
+                    />
+                    <div className='flex items-center justify-between py-2'>
+                      <h3 className='font-semibold'>{workspace.name}</h3>
+                      <p className='rounded-md py-1 px-2 bg-neutral-300 text-white'>
+                        {workspace.sub}
+                      </p>
+                      <p className='inline-flex items-center gap-1'>
+                        <span>
+                          <StarIcon width={18} />
+                        </span>
+                        {workspace.rating}
                       </p>
                     </div>
+                    <p className='text-[13px] leading-3'>
+                      {workspace.occupant} occupant
+                    </p>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
-            <div className='flex justify-center py-6'>
-              <Link
-                href={"/catalogue"}
-                className='text-base md:text-lg font-semibold p-2
+          </div>
+          <div className='flex justify-center py-6'>
+            <Link
+              href={"/catalogue"}
+              className='text-base md:text-lg font-semibold p-2
              bg-neutral-300 rounded-lg border-2 border-neutral-400'>
-                Load More
-              </Link>
+              Load More
+            </Link>
+          </div>
+        </div>
+
+        <div className='w-full bg-[#E6E7ED] py-12'>
+          <div className='bg-[#48adb97d] rounded-3xl flex items-center px-16 py-12 w-[90%] mx-auto'>
+            <div className='w-1/2 p-10 space-y-7'>
+              <h3 className='text-4xl font-medium text-white'>
+                Increase <span className='text-[#0B707B]'>productivity</span>{" "}
+                with EWS
+              </h3>
+              <p className='text-base'>
+                Get more done and be more efficient in a calm, distraction-free
+                environment.
+              </p>
+              <button className='block py-2 px-4 bg-ews rounded-lg text-white text-sm'>
+                Book now
+              </button>
+            </div>
+            <div className='w-1/2 flex justify-center '>
+              <Image alt='vector-image' src={vectorImg} className='w-[400px]' />
             </div>
           </div>
         </div>
@@ -184,17 +216,10 @@ export default function Home() {
             className='absolute top-0 right-1 md:hidden'
           />
           <p className='text-sm md:text-base'>
-            At EWS, our utmost goal is to connect remote workers with workspaces
-            with the look and feel of any work environment. The EWS community
-            offers remote workers an array of rental spaces in different types
-            of location such as cafes, restaurants, coffeeshops and more.
-            Discover workspaces in locations that facilitates productivity and
-            comfort much better than a office. EWS spaces have sophisticated
-            system and technology that speeds up work processes for remote
-            workers. We use maps to ensure that we pick secure and serene
-            locations close to you, you can find workspaces on EWS that give you
-            the efficiency and comfort with numerous amenities just for you and
-            all within your budget.
+            le that work remotely become consistently productive by connecting
+            them with nearby/serene locations, a responsive co-working community
+            who can help them to get their work done, and minimise
+            procrastination.
           </p>
           <div className='w-full border-b border-b-neutral-200 my-4 hidden md:block' />
           <h3
@@ -203,20 +228,47 @@ export default function Home() {
             What makes our workspaces perfect for you?
           </h3>
           <p className='text-sm md:text-base'>
-            EWS workspaces provides you an array of features that makes you feel
-            comfortable and confidence, we help create more opportunities for
-            creative collaboration by providing you with a co-working community
-            thereby giving rise to consistent productivity and minimizing
-            procrastination. So if you’re looking for a serene, productive
-            environment with a co-working community that’s where spaces like
-            ours come into play. Make a switch today to spaces that allow for
-            privacy, collaboration, and networking.
+            {
+              "Our goal is to boost your productivity by 10x and enable you to feel satisfied after a hard day's work.Instead of trying to do more with less, we encourage you to maximize the potential of what you already have, which is 8 hours of work time. Our approach is not just about enhancing your work performance but also about transforming you into a more efficient and effective worker."
+            }
           </p>
         </div>
       </div>
     </Layout>
   );
 }
+
+const Temp2 = ({
+  active,
+  no,
+  heading,
+  body,
+  onClick,
+}: {
+  no: number;
+  heading: string;
+  body: string;
+  active: boolean;
+  onClick: () => void;
+}) => {
+  return (
+    <div
+      className={`py-2 px-4 cursor-pointer ${active ? "bg-ews" : ""}`}
+      onClick={onClick}>
+      <div className='flex gap-3'>
+        <p className='rounded-full w-6 h-6 flex justify-center items-center bg-neutral-300'>
+          {no}
+        </p>
+        <h3 className={`text-sm ${active ? "text-white" : "text-ews"}`}>
+          {heading}
+        </h3>
+      </div>
+      <p className={`text-[11px] ${active ? "text-white" : "text-black/80"}`}>
+        {body}
+      </p>
+    </div>
+  );
+};
 
 const Temp1 = ({
   heading,
@@ -228,11 +280,11 @@ const Temp1 = ({
   children?: ReactNode;
 }) => {
   return (
-    <div className='flex gap-2 md:flex-col justify-end'>
+    <div className='flex gap-2 md:flex-col justify-end w-1/3'>
       <div className='w-44'>{children}</div>
       <div className=''>
         <h3 className='font-semibold md:text-base md:font-medium'>{heading}</h3>
-        <p className='text-sm md:text-[15px]'>{body}</p>
+        <p className='text-sm md:text-sm font-normal'>{body}</p>
       </div>
     </div>
   );
