@@ -1,10 +1,15 @@
 import Layout from "@components/Layout";
+import { Loading } from "@components/Loading";
 import { StarIcon } from "@heroicons/react/24/solid";
-import { workspaces } from "@lib/data";
 import Image from "next/image";
 import Link from "next/link";
+import { api } from "src/server/api";
 
 const Catalogue = () => {
+  const { data, isFetching } = api.space.many.useQuery({});
+
+  if (isFetching && !data) return <Loading />;
+
   return (
     <Layout>
       <div className='pt-20 px-2 pb-10 w-full md:w-10/12 mx-auto'>
@@ -12,14 +17,14 @@ const Catalogue = () => {
           Explore spaces that suit you
         </h3>
         <div className='grid grid-cols-2 md:grid-cols-4 gap-x-2 gap-y-4'>
-          {workspaces.map((workspace) => (
+          {data?.map((workspace) => (
             <Link
               key={workspace.id}
               href={`/catalogue/${workspace.id}`}
               className='text-sm p-1'>
               <Image
                 alt='workspace'
-                src={workspace.image}
+                src={workspace.thumbnail}
                 width={100}
                 height={100}
                 className='rounded-lg w-full'
@@ -38,9 +43,7 @@ const Catalogue = () => {
                   {workspace.rating}
                 </p>
               </div>
-              <p className='text-[13px] leading-3'>
-                {workspace.occupant} occupant
-              </p>
+              <p className='text-[13px] leading-3'>{"1"} occupant</p>
             </Link>
           ))}
         </div>

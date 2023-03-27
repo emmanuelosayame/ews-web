@@ -1,5 +1,8 @@
 import Layout from "@components/Layout";
-import { WifiIcon } from "@heroicons/react/24/solid";
+import WifiIcon from "public/wifi.svg";
+import TvIcon from "public/tv-outline.svg";
+import AcIcon from "public/ac.svg";
+import OfficeIcon from "public/office.svg";
 import { workspaces } from "@lib/data";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,12 +13,20 @@ import image1 from "public/product3.png";
 import image2 from "public/product5.png";
 import image3 from "public/product4.png";
 import image4 from "public/product3.png";
+import NoSmoking from "public/no-smoking.svg";
+import { api } from "src/server/api";
+import { Loading } from "@components/Loading";
 
 const Display = () => {
   const router = useRouter();
   const id = router.query.id?.toString();
 
-  const data = workspaces.find((workspace) => workspace.id === id);
+  const { data, isFetching, isLoading } = api.space.one.useQuery(
+    { id },
+    { enabled: !!id }
+  );
+
+  if (isFetching || isLoading) return <Loading />;
 
   return (
     <Layout>
@@ -58,9 +69,7 @@ const Display = () => {
               </p>
             </div>
             <h3 className='text-lg font-medium'>About this space</h3>
-            <p className='text-sm font-medium'>
-              Workspace - {data?.occupant} occupant
-            </p>
+            <p className='text-sm font-medium'>Workspace - {"1"} occupant</p>
             <p className='text-sm'>
               Looking for an office alternative to get work done and increase
               effectiveness? Look no further! Located at Ella’s Coffeehouse.
@@ -72,21 +81,21 @@ const Display = () => {
             </p>
             <div className='w-full border-b border-b-neutral-200 my-3' />
             <h3 className='text-lg font-medium'>Amenities</h3>
-            <div className='grid grid-cols-3 py-2 text-sm'>
+            <div className='grid grid-cols-3 py-2 text-sm gap-y-4'>
               <AmenityBlock text='Wifi'>
-                <WifiIcon width={25} />
+                <WifiIcon />
               </AmenityBlock>
               <AmenityBlock text='Office furniture'>
-                <WifiIcon width={25} />
+                <OfficeIcon />
               </AmenityBlock>
               <AmenityBlock text='Air conditioner'>
-                <WifiIcon width={25} />
+                <AcIcon />
               </AmenityBlock>
               <AmenityBlock text='No smoking'>
-                <WifiIcon width={25} />
+                <NoSmoking />
               </AmenityBlock>
               <AmenityBlock text='TV'>
-                <WifiIcon width={25} />
+                <TvIcon />
               </AmenityBlock>
             </div>
             <button className='text-blue-400 text-sm'>
@@ -145,7 +154,10 @@ const Display = () => {
                         "It’s easy to contact hosts and keep track of all your bookings when you have a EWS account"
                       }
                     </p>
-                    <button className='p-1 border border-blue-400 text-blue-400 rounded-xl w-10/12 mx-auto'>
+                    <button
+                      onClick={() => router.push("/login")}
+                      className='p-1 border border-blue-400 text-blue-400 rounded-xl 
+                      w-10/12 mx-auto hover:opacity-50'>
                       sign in
                     </button>
                   </div>
@@ -187,7 +199,7 @@ const AmenityBlock = ({
   text: string;
 }) => {
   return (
-    <div className='flex items-center gap-1'>
+    <div className='flex items-center gap-2'>
       {children}
       <p>{text}</p>
     </div>

@@ -75,54 +75,7 @@ export default function Home() {
         </div>
 
         {/* div  */}
-        <div className='w-full bg-[#E6E7ED] p-2'>
-          <h2 className='text-lg font-medium text-center '>
-            How does <span className='text-[#0B707B]'>EWS</span> works
-          </h2>
-          <p className='text-center text-sm leading-3'>Simple and fast!</p>
-
-          <div className='w-fit gap-24 flex mx-auto p-7'>
-            <div className='w-fit'>
-              <div className=' border-2 border-ews relative w-56 h-48 rounded-xl p-1'>
-                <div className='w-full h-full bg-ews rounded-lg'></div>
-                <Image
-                  alt='frame'
-                  src={image1}
-                  className='w-full absolute -bottom-4 -right-4'
-                />
-              </div>
-              <div className='h-1 flex gap-5 mt-10 px-4'>
-                <div className='w-1/3 bg-ews rounded-full' />
-                <div className='w-1/3 bg-neutral-300 rounded-full' />
-                <div className='w-1/3 bg-neutral-300 rounded-full' />
-              </div>
-            </div>
-
-            <div className=' rounded-r-2xl rounded-l-md overflow-hidden w-[350px]'>
-              <Temp2
-                active
-                no={1}
-                heading='Book a space'
-                body='Browse through our catalogue of workspaces near you or walk into any workspaces with our logo displayed.'
-                onClick={() => {}}
-              />
-              <Temp2
-                active={false}
-                no={2}
-                heading='Subscribe to a plan'
-                body='Subscribe to any of our plans to be able to log into your dashboard and check in at an convenient time.'
-                onClick={() => {}}
-              />
-              <Temp2
-                active={false}
-                no={3}
-                heading='Check in'
-                body='Check in either online or scan the QR code at the workspace with your phone camera and be more productive!'
-                onClick={() => {}}
-              />
-            </div>
-          </div>
-        </div>
+        <StepsDisplay />
 
         <div className='md:w-11/12 md:mx-auto mt-12 md:mt-2'>
           <h3 className='text-base md:text-xl text-start font-medium md:font-bold my-4 md:mb-8'>
@@ -135,7 +88,7 @@ export default function Home() {
                   <div className='w-64 text-sm p-1'>
                     <Image
                       alt='workspace'
-                      src={workspace.image}
+                      src={workspace.thumbnail}
                       width={100}
                       height={100}
                       className='rounded-lg w-full'
@@ -152,9 +105,7 @@ export default function Home() {
                         {workspace.rating}
                       </p>
                     </div>
-                    <p className='text-[13px] leading-3'>
-                      {workspace.occupant} occupant
-                    </p>
+                    <p className='text-[13px] leading-3'>{"1"} occupant</p>
                   </div>
                 </div>
               ))}
@@ -237,6 +188,73 @@ export default function Home() {
     </Layout>
   );
 }
+
+const StepsDisplay = () => {
+  const [active, setActive] = useState(1);
+
+  return (
+    <div className='w-full bg-[#E6E7ED] p-2'>
+      <h2 className='text-lg font-medium text-center '>
+        How does <span className='text-[#0B707B]'>EWS</span> works
+      </h2>
+      <p className='text-center text-sm leading-3'>Simple and fast!</p>
+
+      <div className='w-fit gap-24 flex mx-auto p-7'>
+        <div className='w-fit'>
+          <div className=' border-2 border-ews relative w-56 h-48 rounded-xl p-1'>
+            <div className='w-full h-full bg-ews rounded-lg'></div>
+            <Image
+              alt='frame'
+              src={image1}
+              className='w-full absolute -bottom-4 -right-4'
+            />
+          </div>
+          <div className='h-1 flex gap-5 mt-10 px-4'>
+            <div
+              className={`w-1/3 rounded-full ${
+                active === 1 ? "bg-ews" : "bg-neutral-300"
+              }`}
+            />
+            <div
+              className={`w-1/3 rounded-full ${
+                active === 2 ? "bg-ews" : "bg-neutral-300"
+              }`}
+            />
+            <div
+              className={`w-1/3 rounded-full ${
+                active === 3 ? "bg-ews" : "bg-neutral-300"
+              }`}
+            />
+          </div>
+        </div>
+
+        <div className=' rounded-r-2xl rounded-l-md overflow-hidden w-[350px]'>
+          <Temp2
+            active={active === 1}
+            no={1}
+            heading='Book a space'
+            body='Browse through our catalogue of workspaces near you or walk into any workspaces with our logo displayed.'
+            onClick={() => setActive(1)}
+          />
+          <Temp2
+            active={active === 2}
+            no={2}
+            heading='Subscribe to a plan'
+            body='Subscribe to any of our plans to be able to log into your dashboard and check in at an convenient time.'
+            onClick={() => setActive(2)}
+          />
+          <Temp2
+            active={active === 3}
+            no={3}
+            heading='Check in'
+            body='Check in either online or scan the QR code at the workspace with your phone camera and be more productive!'
+            onClick={() => setActive(3)}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Temp2 = ({
   active,

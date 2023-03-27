@@ -1,10 +1,12 @@
 import { router } from "../trpc";
-import { cartRouter } from "./cart";
+import { spacesRouter } from "./spaces";
 import { customerRouter } from "./customer";
+import { sessionRouter } from "./session";
 
 export const appRouter = router({
   customer: customerRouter,
-  // center: itemRouter,
+  space: spacesRouter,
+  session: sessionRouter,
 });
 
 export type AppRouter = typeof appRouter;

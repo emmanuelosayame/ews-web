@@ -3,9 +3,11 @@ import { Bars3Icon, HeartIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import useMediaQuery from "@lib/Hooks/useMediaQuery";
 import Avatar from "public/avatar.svg";
+import { useRouter } from "next/router";
 
 const Header = ({ initialTrans }: { initialTrans: boolean }) => {
   // const mq = useMediaQuery();
+  const router = useRouter();
   return (
     <div
       className={`flex items-center fixed inset-x-0 top-0 z-50
@@ -30,10 +32,12 @@ const Header = ({ initialTrans }: { initialTrans: boolean }) => {
         Join our community
       </Link>
 
-      <Link href={""} className='flex items-center gap-2 ml-4'>
+      <button
+        onClick={() => router.push("/login")}
+        className='flex items-center gap-2 ml-4'>
         <Avatar />
         <p>Login</p>
-      </Link>
+      </button>
     </div>
   );
 };

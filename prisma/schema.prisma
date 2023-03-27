@@ -12,7 +12,7 @@ datasource db {
 
 enum SubType {
   milkshake
-  mag
+  mac
 }
 
 enum Status {
@@ -52,23 +52,27 @@ enum SpaceStatus {
   inActive
 }
 
-type Space {
+type Seat {
   id         String
   status     SpaceStatus
   occupantId String
 }
 
-type CenterLocation {
+type Location {
   state String
   area  String
 }
 
-model Center {
-  id       String         @id @default(auto()) @map("_id") @db.ObjectId
-  name     String
-  opTime   OpTime
-  email    String
-  phoneNo  String
-  location CenterLocation
-  spaces   Space[]
+model Space {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  opTime    OpTime
+  email     String
+  phoneNo   String
+  location  Location
+  seats     Seat[]
+  thumbnail String
+  images    String[]
+  sub       SubType
+  rating    Int
 }

@@ -1,4 +1,8 @@
 import Image from "next/image";
+import FacebookSvg from "public/facebook.svg";
+import InstagramSvg from "public/instagram.svg";
+import TwitterSvg from "public/twitter.svg";
+import LinkedInSvg from "public/linkedin.svg";
 
 const Footer = () => {
   return (
@@ -14,38 +18,18 @@ const Footer = () => {
           />
 
           <div className='flex items-center gap-3 py-1 md:pt-7'>
-            <a href='facebook.com'>
-              <Image
-                alt='facebook-logo'
-                src='/facebook.svg'
-                width={30}
-                height={30}
-              />
+            <a href='http://www.facebook.com/eternalworkspace'>
+              <FacebookSvg />
             </a>
 
-            <a href='instagram.com'>
-              <Image
-                alt='instagram-logo'
-                src='/instagram.svg'
-                width={30}
-                height={30}
-              />
+            <a href='http://www.instagram.com/eternalworkspace'>
+              <InstagramSvg />
             </a>
-            <a href='twitter.com'>
-              <Image
-                alt='twitter-logo'
-                src='/twitter.svg'
-                width={30}
-                height={30}
-              />
+            <a href='http://www.twitter.com/eternalworkspace'>
+              <TwitterSvg />
             </a>
-            <a href='linkedin.com'>
-              <Image
-                alt='linkedin-logo'
-                src='/linkedin.svg'
-                width={30}
-                height={30}
-              />
+            <a href='http://www.linkedin.com/eternalworkspace'>
+              <LinkedInSvg />
             </a>
           </div>
         </div>

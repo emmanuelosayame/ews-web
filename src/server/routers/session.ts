@@ -2,13 +2,13 @@ import { z } from "zod";
 import { UserSchema } from "../schema";
 import { procedure, router } from "../trpc";
 
-export const customerRouter = router({
-  one: procedure.input(z.object({})).query(async ({ input, ctx }) => {
+export const sessionRouter = router({
+  login: procedure.input(z.object({})).query(async ({ input, ctx }) => {
     const {} = input;
     const user = await ctx.prisma.customer.findFirst({});
     return user;
   }),
-  update: procedure
+  logout: procedure
     .input(
       z.object({
         customerId: z.string(),

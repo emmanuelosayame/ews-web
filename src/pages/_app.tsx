@@ -1,6 +1,7 @@
 import "src/styles/globals.css";
 import type { AppProps } from "next/app";
 import font from "@next/font/local";
+import { api } from "src/server/api";
 
 const poppins = font({
   src: [
@@ -47,7 +48,7 @@ const montserrat = font({
   variable: "--font-montserrat",
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <style jsx global>
@@ -64,3 +65,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </>
   );
 }
+
+export default api.withTRPC(App);
