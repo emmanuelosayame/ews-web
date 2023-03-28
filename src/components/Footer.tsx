@@ -19,17 +19,17 @@ const Footer = () => {
 
           <div className='flex items-center gap-3 py-1 md:pt-7'>
             <a href='http://www.facebook.com/eternalworkspace'>
-              <FacebookSvg />
+              <FacebookSvg className='w-6 md:w-auto' />
             </a>
 
             <a href='http://www.instagram.com/eternalworkspace'>
-              <InstagramSvg />
+              <InstagramSvg className='w-6 md:w-auto' />
             </a>
             <a href='http://www.twitter.com/eternalworkspace'>
-              <TwitterSvg />
+              <TwitterSvg className='w-6 md:w-auto' />
             </a>
             <a href='http://www.linkedin.com/eternalworkspace'>
-              <LinkedInSvg />
+              <LinkedInSvg className='w-6 md:w-auto' />
             </a>
           </div>
         </div>
