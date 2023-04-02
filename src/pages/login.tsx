@@ -85,7 +85,7 @@ const Login = () => {
                 </p>
               </div>
 
-              <button
+              {/* <button
                 className='flex gap-3 items-center text-lg border border-white
                text-white rounded-2xl py-1 px-4 drop-shadow-md hover:bg-white/40'>
                 <h3>Or continue with google</h3>
@@ -97,7 +97,7 @@ const Login = () => {
                     height={35}
                   />
                 </button>
-              </button>
+              </button> */}
             </Form>
           )}
         </Formik>

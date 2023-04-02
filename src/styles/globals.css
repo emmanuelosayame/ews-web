@@ -29,11 +29,11 @@
 
 .bg-g-footer {
   background: linear-gradient(
-    0deg,
-    rgba(154, 209, 215, 0.55),
-    rgba(154, 209, 215, 0.55)
-  );
-  /* url(.jpg); */
+      0deg,
+      rgba(154, 209, 215, 0.55),
+      rgba(154, 209, 215, 0.55)
+    ),
+    url(/texturedpattern.png);
 }
 
 @layer components {

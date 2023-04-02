@@ -3,12 +3,14 @@ import FacebookSvg from "public/facebook.svg";
 import InstagramSvg from "public/instagram.svg";
 import TwitterSvg from "public/twitter.svg";
 import LinkedInSvg from "public/linkedin.svg";
+// import texturedPattern from "public/texturedpattern.png";
 
 const Footer = () => {
   return (
-    <div className='bg-shinygray pt-40 relative'>
+    <div className='bg-shinygray pt-[170px] md:pt-40 relative'>
       <div
-        className='md:h-52 bg-g-footer w-10/12 md:w-9/12 mx-auto absolute top-5 shadow-xl 
+        className='md:h-52 bg-g-footer w-10/12 md:w-9/12 mx-auto absolute top-5 shadow-lg md:shadow-md
+         shadow-[#00000067] md:shadow-[#00000044] 
       left-1/2 -translate-x-1/2 rounded-2xl md:rounded-lg p-5 md:p-10 md:flex md:justify-between md:gap-10 md:items-center'>
         <div className='space-y-4'>
           <h3 className='font-semibold text-xl font-montserrat'>
@@ -20,7 +22,7 @@ const Footer = () => {
             regulation updates.
           </p>
         </div>
-        <div className='space-y-2'>
+        <div className='space-y-3'>
           <div className='space-y-4 md:space-y-0 md:flex md:bg-shinygray rounded-xl p-1'>
             <input
               className='w-full md:w-2/3 bg-shinygray rounded-xl
@@ -33,12 +35,13 @@ const Footer = () => {
             </button>
           </div>
 
-          <p className='text-sm'>
+          <p className='text-sm hidden md:block'>
             By signing up, you agree to our Terms of Service and Privacy Policy.{" "}
           </p>
         </div>
       </div>
-      <div className='grid grid-cols-2 md:grid-cols-5 gap-7 md:gap-2 bg-footer py-3 px-5 md:px-28 md:pb-10 pt-28'>
+
+      <div className='grid grid-cols-2 md:grid-cols-5 gap-7 md:gap-2 bg-footer py-3 px-5 md:px-28 md:pb-10 pt-36 md:pt-28'>
         <div className='w-fit md:w-full text-white md:col-span-2'>
           <div className='flex gap-2 items-center'>
             <Image
