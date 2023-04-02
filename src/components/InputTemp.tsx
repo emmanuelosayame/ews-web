@@ -27,14 +27,14 @@ export const InputTemp = ({
   //TODO switch ibg to inputprops
   return (
     <div className='w-full'>
-      <div className='flex justify-between'>
+      <div className='flex justify-between mb-1'>
         <p {...style.heading}>{heading}</p>
         {touched && error && (
           <p className='text-neutral-500 text-center italic text-sm'>{error}</p>
         )}
       </div>
       <input
-        className={`rounded-md w-full py-1 px-2 ring-1 ring-neutral-300 outline-none ${className}`}
+        className={`rounded-lg w-full py-2 px-4 bg-white outline-none ${className}`}
         type={type}
         {...fieldProps}
         placeholder={placeholder}

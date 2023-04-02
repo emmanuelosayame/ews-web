@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Bars3Icon, HeartIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import useMediaQuery from "@lib/Hooks/useMediaQuery";
 import Avatar from "public/avatar.svg";
@@ -11,7 +10,7 @@ const Header = ({ initialTrans }: { initialTrans: boolean }) => {
   return (
     <div
       className={`flex items-center fixed inset-x-0 top-0 z-50
-     text-white px-2 md:px-14 py-3 gap-3 text-xl ${
+     text-white px-2 md:px-14 py-3 gap-3 text-xl font-medium ${
        !initialTrans ? "bg-clightblue" : ""
      }`}>
       <div className='flex items-center gap-2 flex-1 '>
@@ -32,12 +31,13 @@ const Header = ({ initialTrans }: { initialTrans: boolean }) => {
         Join our community
       </Link>
 
-      <button
+      <Link
+        href={"/login"}
         onClick={() => router.push("/login")}
         className='flex items-center gap-2 ml-4'>
         <Avatar />
         <p>Login</p>
-      </button>
+      </Link>
     </div>
   );
 };

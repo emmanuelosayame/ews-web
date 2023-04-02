@@ -9,13 +9,13 @@ import { ReactNode, useEffect, useState } from "react";
 import BoostSvg from "public/boost.svg";
 import PeopleComn from "public/PeopleCommunity.svg";
 import HomeIcon2 from "public/HomeVector.svg";
-import vectorImg from "public/VectorImage.png";
 import SearchIcon from "public/magnifier.svg";
 import LocationIcon from "public/location-search.svg";
 import step1 from "public/step-1.png";
 import step2 from "public/step-2.png";
 import step3 from "public/step-3.png";
 import TickSvg from "public/tick.svg";
+import ConversationBusinessman from "public/ConversationBusinessman.png";
 
 export default function Home() {
   const mq = useMediaQuery("(min-width: 800px)");
@@ -50,14 +50,16 @@ export default function Home() {
         <p className='text-2xl md:text-5xl text-center font-bold font-montserrat'>
           Work in a workspace near you
         </p>
-        <div className='bg-white rounded-xl overflow-hidden h-16 flex items-center p-1 w-full md:w-1/2 gap-2'>
-          <div className='pl-3'>{mq ? <SearchIcon /> : <LocationIcon />}</div>
+        <div className='bg-shinygray rounded-xl overflow-hidden h-16 flex items-center p-1 w-full md:w-1/2 gap-2'>
+          <div className='pl-3'>
+            {mq ? <SearchIcon className='fill-[#50484A]' /> : <LocationIcon />}
+          </div>
           <input
             className='bg-transparent text-black/80 h-1/2 w-full placeholder:text-[#50484A]'
             placeholder='Enter city or region'
           />
           <button className='btn-green-g h-full rounded-xl w-24 md:w-36 flex justify-center items-center'>
-            {mq ? "Search" : <SearchIcon />}
+            {mq ? "Search" : <SearchIcon className='fill-white' />}
           </button>
         </div>
       </div>
@@ -148,13 +150,20 @@ export default function Home() {
               Get more done and be more efficient in a calm, distraction-free
               environment.
             </p>
-            <button className='block mx-auto py-2 px-4 bg-ews rounded-lg text-white text-sm'>
-              Book now
+            <button className='block mx-auto py-2 px-7 bg-ews rounded-lg text-white text-sm'>
+              Book a seat
             </button>
           </div>
 
-          <div className='w-full md:w-1/2 flex justify-center pt-10 md:pt-0'>
-            <Image alt='vector-image' src={vectorImg} className='w-[400px]' />
+          <div className='w-full md:w-1/2 flex justify-center py-10 md:pt-0'>
+            <div className='border-2 border-ews relative w-full md:w-96 h-72 md:h-[370px] rounded-xl p-1'>
+              <div className='w-full h-full bg-ews rounded-lg' />
+              <Image
+                alt='frame'
+                src={ConversationBusinessman}
+                className='p-2 w-full absolute -bottom-7 -left-4'
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -249,7 +258,7 @@ const PricingDisplay = ({}: {}) => {
         </button>
       </div>
 
-      <div className='md:flex md:w-7/12 justify-between mx-auto space-y-8 md:space-y-0'>
+      <div className='md:flex md:w-fit md:gap-20 justify-between mx-auto space-y-8 md:space-y-0'>
         <div className='bg-white rounded-3xl p-8 space-y-4 md:w-96'>
           <h3 className='text-lg font-light'>Mac</h3>
           {active === "monthly" ? (
